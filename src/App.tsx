@@ -1,10 +1,12 @@
-import { Flex, Text, Button } from '@radix-ui/themes';
+import '@radix-ui/themes/styles.css';
+import { Theme } from '@radix-ui/themes';
+
+import AppRouter from './router';
 
 export default function App() {
   return (
-    <Flex direction='column' gap='2'>
-      <Text>Hello from Radix Themes :)</Text>
-      <Button>Let's go</Button>
-    </Flex>
+    <Theme accentColor='crimson'>
+      <AppRouter />
+    </Theme>
   );
 }
