@@ -3,14 +3,12 @@ import { UserResponse } from '../../services/user/user-response.interface';
 import withAsync from '../../utils/with-async.util';
 import { User } from './user.interface';
 
-async function getAllUsers(): Promise<User[] | undefined> {
+async function getAllUsers(): Promise<User[] | null> {
   const { response, error } = await withAsync(() => UserService.fetchUsers());
 
   if (error) throw error;
-
-  if (response) {
-    return transformUsersResponse(response.data);
-  }
+  if (response) return transformUsersResponse(response.data);
+  return null;
 }
 
 function transformUsersResponse(users: UserResponse[]): User[] {
