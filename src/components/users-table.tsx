@@ -7,7 +7,7 @@ import UserAPI from '../api/user/user.api';
 import { User } from '../api/user/user.interface';
 
 export default function UsersTable() {
-  const { data, isLoading, error } = useSWR('/users', UserAPI.getAllUsers);
+  const { data, isLoading, error } = useSWR('users', UserAPI.getAllUsers);
 
   if (error) throw error;
 
