@@ -1,11 +1,16 @@
-function fetchUsersService() {}
+import api from '../api';
+import { API_PATHS } from '../api-paths';
+
+import { UserResponse } from './user-response.interface';
+
+const fetchUsers = () => api.get<UserResponse[]>(API_PATHS.users);
 
 // Export
 const UserService = {
-  fetchUsersService,
-  // fetchUserService
-  // createUserService
-  // deleteUserService
+  fetchUsers,
+  // fetchUser
+  // createUser
+  // deleteUser
   // ...
   // ...
 };

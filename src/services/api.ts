@@ -2,7 +2,7 @@ import axios, { AxiosInstance, AxiosRequestConfig } from 'axios';
 
 // Axios instance & default parameters
 const axiosParams = {
-  //  baseURL: ''
+  baseURL: 'https://jsonplaceholder.typicode.com',
 };
 
 const axiosInstance = axios.create(axiosParams);

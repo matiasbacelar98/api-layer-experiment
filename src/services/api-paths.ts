@@ -1,4 +1,4 @@
 export const API_PATHS = {
-  user: '',
-  comment: '',
+  users: '/users',
+  posts: '/posts',
 };
