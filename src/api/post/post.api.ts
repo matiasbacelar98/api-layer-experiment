@@ -3,14 +3,13 @@ import { PostResponse } from '../../services/post/post-response.interface';
 import withAsync from '../../utils/with-async.util';
 import { Post } from './post.interface';
 
-async function getAllPosts() {
+async function getAllPosts(): Promise<Post[] | null> {
   const { response, error } = await withAsync(() => PostService.fetchPosts());
 
   if (error) throw error;
 
-  if (response) {
-    return transformPostsResponse(response.data);
-  }
+  if (response) return transformPostsResponse(response.data);
+  return null;
 }
 
 function transformPostsResponse(posts: PostResponse[]): Post[] {
